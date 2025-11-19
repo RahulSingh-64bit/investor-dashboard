@@ -1,7 +1,14 @@
 // src/app/invest/page.jsx
+"use client";                          // ← Add this at the top!
+
+import { useState } from "react";
 import InvestmentCard from "@/components/Invest/InvestmentCard";
+import CreateOrderDialog from "@/components/Portfolio/CreateOrderDialog";
+  // ← ADD
 
 export default function InvestPage() {
+  const [orderDialogOpen, setOrderDialogOpen] = useState(false);     // ← ADD
+  const [selectedHolding, setSelectedHolding] = useState(null);      // ← ADD
   const investments = [
     {
       code: "SCR",
@@ -46,17 +53,33 @@ export default function InvestPage() {
     },
   ];
 
+const handleOpenOrder = (investment) => {
+    setSelectedHolding(investment);
+    setOrderDialogOpen(true);
+  };
+
   return (
     <div className="max-w-7xl mx-auto">
-      <h1 className="text-3xl font-bold text-foreground mb-8">
-        Investor App - Primary market subscription creation
-      </h1>
-
+      {/* your existing h1 and grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {investments.map((investment) => (
-          <InvestmentCard key={investment.code} {...investment} />
+          <div key={investment.code} onClick={() => handleOpenOrder(investment)} className="cursor-pointer">
+            <InvestmentCard {...investment} />
+          </div>
         ))}
       </div>
+
+      {/* ← ADD THIS DIALOG */}
+      {selectedHolding && (
+        <CreateOrderDialog
+          open={orderDialogOpen}
+          onOpenChange={setOrderDialogOpen}
+          holding={{
+            code: selectedHolding.code,
+            valuationPerToken: selectedHolding.details.find(d => d.label.includes("price"))?.value || "US$10.00"
+          }}
+        />
+      )}
     </div>
   );
 }
