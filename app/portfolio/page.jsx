@@ -15,16 +15,38 @@ export default function PortfolioPage() {
   // Sample data — replace with real data later
   const holdings = [
     {
-      id: "1",
-      code: "GBB",
-      balance: 0,
-      valuationPerToken: "US$10.43",
-      valuation: "US$0.00",
-      type: "DEBT",
-      wallet: "0xc28RcFCE83948...630",
-      blocked: 0,
-      unblocked: 0,
-    },
+    id: 1,
+    code: "ACP",
+    balance: "34.532413",
+    valuationPerToken: "US$10.43",
+    valuation: "US$360.18",
+    type: "DEBT",
+    wallet: "0xc28RfCE83948...b630",
+    blocked: 0,
+    unblocked: 100,
+  },
+  {
+    id: 2,
+    code: "SCR",
+    balance: "34.532413",
+    valuationPerToken: "US$10.43",
+    valuation: "US$360.18",
+    type: "DEBT",
+    wallet: "0xc28RfCE83948...b630",
+    blocked: 0,
+    unblocked: 100,
+  },
+  {
+    id: 3,
+    code: "USP",
+    balance: "34.532413",
+    valuationPerToken: "US$10.43",
+    valuation: "US$360.18",
+    type: "DEBT",
+    wallet: "0xc28RfCE83948...b630",
+    blocked: 0,
+    unblocked: 100,
+  },
   ];
 
   return (

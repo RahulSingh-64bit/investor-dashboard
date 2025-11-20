@@ -60,26 +60,15 @@ const handleOpenOrder = (investment) => {
 
   return (
     <div className="max-w-7xl mx-auto">
-      {/* your existing h1 and grid */}
+      <h1 className="text-3xl font-bold text-foreground mb-8">
+        Investor App - Primary market subscription creation
+      </h1>
+      
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {investments.map((investment) => (
-          <div key={investment.code} onClick={() => handleOpenOrder(investment)} className="cursor-pointer">
-            <InvestmentCard {...investment} />
-          </div>
+          <InvestmentCard key={investment.code} {...investment} />
         ))}
       </div>
-
-      {/* ← ADD THIS DIALOG */}
-      {selectedHolding && (
-        <CreateOrderDialog
-          open={orderDialogOpen}
-          onOpenChange={setOrderDialogOpen}
-          holding={{
-            code: selectedHolding.code,
-            valuationPerToken: selectedHolding.details.find(d => d.label.includes("price"))?.value || "US$10.00"
-          }}
-        />
-      )}
     </div>
   );
 }

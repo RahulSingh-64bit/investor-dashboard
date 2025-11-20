@@ -38,9 +38,9 @@ export default function Sidebar({ isOpen = false, onClose }) {
                   href={item.href}
                   onClick={onClose}
                   className={cn(
-                    "flex items-center gap-3 px-4 py-3 rounded-lg text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors",
+                    "flex items-center gap-3 px-4 py-3 rounded-lg text-gray-500 hover:bg-sidebar-accent hover:text-white-accent-foreground transition-colors",
                     isActive &&
-                      "bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary"
+                      "bg-primary text-white hover:bg-blue-600"
                   )}
                 >
                   <Icon className="w-5 h-5" />
