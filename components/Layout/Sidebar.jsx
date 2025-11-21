@@ -1,4 +1,3 @@
-// src/components/Layout/Sidebar.jsx
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { TrendingUp, Briefcase, ShoppingCart, ArrowLeftRight } from "lucide-react";

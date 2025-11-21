@@ -36,20 +36,23 @@ export default function HoldingDetailsDialog({ open, onOpenChange, holding }) {
           <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
             <span>Portfolio</span>
             <span>›</span>
-            <Badge variant="secondary" className="bg-green-200 text-success border-success/20">
+            <Badge
+              variant="secondary"
+              className="bg-green-200 text-success border-success/20"
+            >
               {holding.code}
             </Badge>
-            <span>{holding.code} {isGBB ? "Green Brew Bond" : ""}</span>
+            <span>
+              {holding.code} {isGBB ? "Green Brew Bond" : ""}
+            </span>
           </div>
           <DialogTitle className="sr-only">Holding Details</DialogTitle>
         </DialogHeader>
 
         {/* MAIN GRID - Perfect balance */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 mt-4">
-
           {/* LEFT COLUMN - Token Info */}
           <div className="space-y-8">
-
             {/* Token Header */}
             <div className="flex items-center gap-5">
               <div className="w-16 h-16 bg-success rounded-xl flex items-center justify-center text-green-600 text-2xl font-bold shrink-0">
@@ -67,7 +70,9 @@ export default function HoldingDetailsDialog({ open, onOpenChange, holding }) {
             <div className="bg-muted/50 rounded-2xl p-6 space-y-6">
               {/* Token Address */}
               <div className="flex justify-between items-start gap-4">
-                <span className="text-sm text-muted-foreground min-w-[140px]">Token address</span>
+                <span className="text-sm text-muted-foreground min-w-[140px]">
+                  Token address
+                </span>
                 <div className="flex items-center gap-3 flex-1 justify-end">
                   <span className="text-sm text-primary font-mono break-all text-right leading-relaxed">
                     0x582B2D043FB002be351...C38
@@ -76,7 +81,9 @@ export default function HoldingDetailsDialog({ open, onOpenChange, holding }) {
                     variant="ghost"
                     size="icon"
                     className="h-9 w-9 shrink-0"
-                    onClick={() => handleCopy("0x582B2D043FB002be351C38", "address")}
+                    onClick={() =>
+                      handleCopy("0x582B2D043FB002be351C38", "address")
+                    }
                   >
                     {copiedField === "address" ? (
                       <Check className="w-4 h-4 text-success" />
@@ -87,10 +94,12 @@ export default function HoldingDetailsDialog({ open, onOpenChange, holding }) {
                 </div>
               </div>
 
-              {/* Rest of the fields - perfectly aligned */}
+              {/* Rest of the fields*/}
               <div className="space-y-5">
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-muted-foreground">Token status</span>
+                  <span className="text-sm text-muted-foreground">
+                    Token status
+                  </span>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-success"></div>
                     <span className="text-sm font-medium">Active</span>
@@ -98,33 +107,47 @@ export default function HoldingDetailsDialog({ open, onOpenChange, holding }) {
                 </div>
 
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-muted-foreground">Token symbol</span>
+                  <span className="text-sm text-muted-foreground">
+                    Token symbol
+                  </span>
                   <span className="text-sm font-medium">{holding.code}</span>
                 </div>
 
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-muted-foreground">Token name</span>
+                  <span className="text-sm text-muted-foreground">
+                    Token name
+                  </span>
                   <span className="text-sm font-medium">
                     {isGBB ? "Green Brew Bond" : `${holding.code} Token`}
                   </span>
                 </div>
 
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-muted-foreground">Valuation</span>
-                  <span className="text-sm font-medium">{holding.valuationPerToken}</span>
+                  <span className="text-sm text-muted-foreground">
+                    Valuation
+                  </span>
+                  <span className="text-sm font-medium">
+                    {holding.valuationPerToken}
+                  </span>
                 </div>
 
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-muted-foreground">Valuation time</span>
+                  <span className="text-sm text-muted-foreground">
+                    Valuation time
+                  </span>
                   <span className="text-sm">1 Jul 2024, 13:05:17</span>
                 </div>
 
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-muted-foreground">Blockchain network</span>
+                  <span className="text-sm text-muted-foreground">
+                    Blockchain network
+                  </span>
                   <Button
                     variant="link"
                     className="h-auto p-0 text-primary text-sm font-medium"
-                    onClick={() => window.open("https://amoy.polygonscan.com/", "_blank")}
+                    onClick={() =>
+                      window.open("https://amoy.polygonscan.com/", "_blank")
+                    }
                   >
                     Amoy
                     <ExternalLink className="w-3 h-3 ml-1" />
@@ -132,12 +155,16 @@ export default function HoldingDetailsDialog({ open, onOpenChange, holding }) {
                 </div>
 
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-muted-foreground">Instrument type</span>
+                  <span className="text-sm text-muted-foreground">
+                    Instrument type
+                  </span>
                   <span className="text-sm font-medium">{holding.type}</span>
                 </div>
 
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-muted-foreground">Token standard</span>
+                  <span className="text-sm text-muted-foreground">
+                    Token standard
+                  </span>
                   <span className="text-sm font-medium">T-REX v3.1</span>
                 </div>
               </div>
@@ -146,7 +173,9 @@ export default function HoldingDetailsDialog({ open, onOpenChange, holding }) {
             {/* Documents */}
             <div className="bg-muted/50 rounded-2xl p-6">
               <h3 className="font-semibold text-lg mb-3">Documents</h3>
-              <p className="text-sm text-muted-foreground">No documents available</p>
+              <p className="text-sm text-muted-foreground">
+                No documents available
+              </p>
             </div>
           </div>
 
@@ -157,12 +186,16 @@ export default function HoldingDetailsDialog({ open, onOpenChange, holding }) {
               <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-8">
                 <div>
                   <h3 className="text-xl font-semibold">Valuation</h3>
-                  <p className="text-3xl font-bold text-destructive mt-1">{valuationChange}</p>
+                  <p className="text-3xl font-bold text-destructive mt-1">
+                    {valuationChange}
+                  </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
                   <div className="flex-1">
-                    <Label htmlFor="start-date" className="text-xs font-medium">Start date</Label>
+                    <Label htmlFor="start-date" className="text-xs font-medium">
+                      Start date
+                    </Label>
                     <Input
                       id="start-date"
                       type="text"
@@ -173,7 +206,9 @@ export default function HoldingDetailsDialog({ open, onOpenChange, holding }) {
                     />
                   </div>
                   <div className="flex-1">
-                    <Label htmlFor="end-date" className="text-xs font-medium">End date</Label>
+                    <Label htmlFor="end-date" className="text-xs font-medium">
+                      End date
+                    </Label>
                     <Input
                       id="end-date"
                       type="text"
@@ -188,12 +223,18 @@ export default function HoldingDetailsDialog({ open, onOpenChange, holding }) {
 
               {/* Chart Area */}
               <div className="relative h-80 lg:h-96 bg-background/30 rounded-xl overflow-hidden">
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 800 350">
+                <svg
+                  className="absolute inset-0 w-full h-full"
+                  viewBox="0 0 800 350"
+                >
                   {/* Grid Lines */}
                   {[50, 100, 150, 200, 250, 300].map((y) => (
                     <line
                       key={y}
-                      x1="60" y1={y} x2="740" y2={y}
+                      x1="60"
+                      y1={y}
+                      x2="740"
+                      y2={y}
                       stroke="currentColor"
                       strokeWidth="1"
                       className="text-muted/20"

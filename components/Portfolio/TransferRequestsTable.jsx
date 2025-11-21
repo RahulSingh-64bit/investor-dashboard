@@ -1,5 +1,4 @@
-// src/components/Portfolio/TransferRequestsTable.jsx
-"use client"; // Required because of useState
+"use client";
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -19,7 +18,8 @@ export default function TransferRequestsTable({
 }) {
   const [activeSubTab, setActiveSubTab] = useState("sent");
 
-  const currentRequests = activeSubTab === "sent" ? sentRequests : receivedRequests;
+  const currentRequests =
+    activeSubTab === "sent" ? sentRequests : receivedRequests;
   const isEmpty = currentRequests.length === 0;
 
   return (
@@ -63,9 +63,12 @@ export default function TransferRequestsTable({
       </div>
 
       {isEmpty ? (
-        /* Beautiful Empty State */
+        /* Empty State */
         <div className="flex flex-col items-center justify-center py-20 text-center space-y-6">
-          <FileText className="w-20 h-20 text-muted-foreground/30" strokeWidth={0.8} />
+          <FileText
+            className="w-20 h-20 text-muted-foreground/30"
+            strokeWidth={0.8}
+          />
           <div className="max-w-sm space-y-3">
             <p className="text-lg font-semibold text-foreground">
               No transfer requests yet
@@ -94,7 +97,9 @@ export default function TransferRequestsTable({
               <TableBody>
                 {currentRequests.map((request) => (
                   <TableRow key={request.id}>
-                    <TableCell className="font-medium">{request.actions}</TableCell>
+                    <TableCell className="font-medium">
+                      {request.actions}
+                    </TableCell>
                     <TableCell>
                       <span
                         className={`font-medium ${
@@ -109,8 +114,12 @@ export default function TransferRequestsTable({
                       </span>
                     </TableCell>
                     <TableCell>{request.type}</TableCell>
-                    <TableCell className="text-sm">{request.createdAt}</TableCell>
-                    <TableCell className="text-sm">{request.lastUpdated}</TableCell>
+                    <TableCell className="text-sm">
+                      {request.createdAt}
+                    </TableCell>
+                    <TableCell className="text-sm">
+                      {request.lastUpdated}
+                    </TableCell>
                     <TableCell>
                       <Button variant="ghost" size="icon" className="h-8 w-8">
                         <span className="text-lg leading-none">...</span>

@@ -1,14 +1,14 @@
-// src/app/invest/page.jsx
-"use client";                          // ← Add this at the top!
+
+"use client";                          
 
 import { useState } from "react";
 import InvestmentCard from "@/components/Invest/InvestmentCard";
 import CreateOrderDialog from "@/components/Portfolio/CreateOrderDialog";
-  // ← ADD
+  
 
 export default function InvestPage() {
-  const [orderDialogOpen, setOrderDialogOpen] = useState(false);     // ← ADD
-  const [selectedHolding, setSelectedHolding] = useState(null);      // ← ADD
+  const [orderDialogOpen, setOrderDialogOpen] = useState(false);     
+  const [selectedHolding, setSelectedHolding] = useState(null);     
   const investments = [
     {
       code: "SCR",

@@ -1,5 +1,5 @@
-// src/app/buy-sell/page.jsx
-"use client"; // Required: useState + form + toast
+
+"use client";
 
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

@@ -1,4 +1,3 @@
-// src/components/Invest/InvestmentCard.jsx
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 

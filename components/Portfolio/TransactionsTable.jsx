@@ -1,5 +1,4 @@
-// src/components/Portfolio/TransactionsTable.jsx
-"use client"; // Needed only if you ever add state/toast later (safe to keep)
+"use client";
 
 import { Button } from "@/components/ui/button";
 import { FileText, SlidersHorizontal } from "lucide-react";
@@ -26,7 +25,7 @@ export default function TransactionsTable({ transactions = [] }) {
       </div>
 
       {isEmpty ? (
-        /* Empty State – looks gorgeous */
+        /* Empty State */
         <div className="flex flex-col items-center justify-center py-20 text-center space-y-4">
           <FileText className="w-20 h-20 text-muted-foreground/30" strokeWidth={0.8} />
           <div className="max-w-md space-y-2">

@@ -1,5 +1,5 @@
-// src/app/portfolio/page.jsx
-"use client";               // ← Important: Tabs + useState = Client Component
+
+"use client";         
 
 import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -12,7 +12,7 @@ import TransactionsTable from "@/components/Portfolio/TransactionsTable";
 export default function PortfolioPage() {
   const [activeTab, setActiveTab] = useState("holdings");
 
-  // Sample data — replace with real data later
+  // Sample data 
   const holdings = [
     {
     id: 1,

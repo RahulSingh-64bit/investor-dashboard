@@ -64,7 +64,7 @@ export default function CreateOrderDialog({ open, onOpenChange, holding }) {
           </DialogTitle>
         </DialogHeader>
 
-        {/* PROCESSING FLOW — EXACTLY LIKE YOUR IMAGE */}
+        {/* PROCESSING FLOW*/}
         {showProcessingFlow ? (
           <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-8 mt-8">
             {/* Left Sidebar */}
@@ -76,7 +76,9 @@ export default function CreateOrderDialog({ open, onOpenChange, holding }) {
                 </div>
                 <div>
                   <div className="font-bold text-lg">{holding.code}</div>
-                  <div className="text-sm text-muted-foreground">{tokenName}</div>
+                  <div className="text-sm text-muted-foreground">
+                    {tokenName}
+                  </div>
                 </div>
               </div>
 
@@ -84,11 +86,15 @@ export default function CreateOrderDialog({ open, onOpenChange, holding }) {
               <div className="space-y-4">
                 <div className="flex items-center gap-4 p-4 rounded-xl bg-success/10 border-l-4 border-success">
                   <CheckCircle2 className="w-6 h-6 text-success" />
-                  <span className="font-medium text-success">Qualification</span>
+                  <span className="font-medium text-success">
+                    Qualification
+                  </span>
                 </div>
                 <div className="flex items-center gap-4 p-4 rounded-xl bg-primary/10 border-l-4 border-primary">
                   <CheckCircle2 className="w-6 h-6 text-primary" />
-                  <span className="font-semibold text-primary">Create subscription order</span>
+                  <span className="font-semibold text-primary">
+                    Create subscription order
+                  </span>
                 </div>
                 <div className="flex items-center gap-4 p-4 rounded-xl opacity-70">
                   <Circle className="w-6 h-6 text-primary fill-current" />
@@ -102,16 +108,20 @@ export default function CreateOrderDialog({ open, onOpenChange, holding }) {
               {/* Payment Info Card */}
               <div className="bg-card border rounded-2xl p-6 space-y-6">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Further payment instructions have been sent to your email address:{" "}
+                  Further payment instructions have been sent to your email
+                  address:{" "}
                   <span className="font-semibold text-foreground">
                     barbara-investorappdemo@tokery.com
                   </span>
-                  . Balance on your wallet will be updated as soon as payment is confirmed by the issuer.
+                  . Balance on your wallet will be updated as soon as payment is
+                  confirmed by the issuer.
                 </p>
 
                 <div className="space-y-5">
                   <div>
-                    <Label className="text-sm text-muted-foreground">Amount to pay</Label>
+                    <Label className="text-sm text-muted-foreground">
+                      Amount to pay
+                    </Label>
                     <div className="text-2xl font-bold mt-1">
                       USDC {totalPayable.toFixed(6)}
                     </div>
@@ -155,7 +165,8 @@ export default function CreateOrderDialog({ open, onOpenChange, holding }) {
                 <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 flex gap-3">
                   <Info className="w-5 h-5 text-orange-600 mt-0.5 shrink-0" />
                   <p className="text-sm text-orange-800">
-                    Ensure the correct wallet and network are being used, as failure to do so may result in loss of funds.
+                    Ensure the correct wallet and network are being used, as
+                    failure to do so may result in loss of funds.
                   </p>
                 </div>
               </div>
@@ -171,15 +182,21 @@ export default function CreateOrderDialog({ open, onOpenChange, holding }) {
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Number of tokens</span>
+                    <span className="text-muted-foreground">
+                      Number of tokens
+                    </span>
                     <span className="font-medium">{holding.code} 123</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Price per token</span>
+                    <span className="text-muted-foreground">
+                      Price per token
+                    </span>
                     <span className="font-medium">USDC 10.0011058388</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Net investment</span>
+                    <span className="text-muted-foreground">
+                      Net investment
+                    </span>
                     <span className="font-medium">USDC 1,230.13601756724</span>
                   </div>
                   <div className="flex justify-between">
@@ -194,7 +211,7 @@ export default function CreateOrderDialog({ open, onOpenChange, holding }) {
             </div>
           </div>
         ) : (
-          /* YOUR ORIGINAL FORM — 100% UNCHANGED */
+          /* FORM  */
           <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-8 mt-6">
             {/* LEFT SIDEBAR - Steps & Token Info */}
             <div className="space-y-6">
@@ -204,7 +221,9 @@ export default function CreateOrderDialog({ open, onOpenChange, holding }) {
                 </div>
                 <div>
                   <div className="font-bold text-lg">{holding.code}</div>
-                  <div className="text-sm text-muted-foreground">{tokenName}</div>
+                  <div className="text-sm text-muted-foreground">
+                    {tokenName}
+                  </div>
                 </div>
               </div>
 
@@ -215,7 +234,9 @@ export default function CreateOrderDialog({ open, onOpenChange, holding }) {
                 </div>
                 <div className="flex items-center gap-4 p-4 rounded-xl bg-primary/10 border-l-4 border-primary">
                   <Circle className="w-6 h-6 text-primary fill-current" />
-                  <span className="font-semibold text-primary">Create subscription order</span>
+                  <span className="font-semibold text-primary">
+                    Create subscription order
+                  </span>
                 </div>
                 <div className="flex items-center gap-4 p-4 rounded-xl opacity-50">
                   <Circle className="w-6 h-6" />
@@ -229,8 +250,13 @@ export default function CreateOrderDialog({ open, onOpenChange, holding }) {
               {/* Form */}
               <div className="space-y-7">
                 <div>
-                  <Label className="text-base font-semibold mb-3 block">I want to pay with:</Label>
-                  <Select value={paymentMethod} onValueChange={setPaymentMethod}>
+                  <Label className="text-base font-semibold mb-3 block">
+                    I want to pay with:
+                  </Label>
+                  <Select
+                    value={paymentMethod}
+                    onValueChange={setPaymentMethod}
+                  >
                     <SelectTrigger className="h-12">
                       <SelectValue />
                     </SelectTrigger>
@@ -245,29 +271,48 @@ export default function CreateOrderDialog({ open, onOpenChange, holding }) {
 
                 <div>
                   <Label className="text-base font-semibold mb-4 flex items-center gap-2">
-                    <div className="w-6 h-6 bg-purple-600 rounded flex items-center justify-center text-white text-xs">◆</div>
+                    <div className="w-6 h-6 bg-purple-600 rounded flex items-center justify-center text-white text-xs">
+                      ◆
+                    </div>
                     My intended investment
                   </Label>
-                  <RadioGroup value={investmentType} onValueChange={setInvestmentType}>
+                  <RadioGroup
+                    value={investmentType}
+                    onValueChange={setInvestmentType}
+                  >
                     <div className="flex flex-col sm:flex-row gap-6">
                       <div className="flex items-center gap-3">
                         <RadioGroupItem value="token" id="token" />
-                        <Label htmlFor="token" className="font-medium cursor-pointer">by token amount</Label>
+                        <Label
+                          htmlFor="token"
+                          className="font-medium cursor-pointer"
+                        >
+                          by token amount
+                        </Label>
                       </div>
                       <div className="flex items-center gap-3">
                         <RadioGroupItem value="net" id="net" />
-                        <Label htmlFor="net" className="font-medium cursor-pointer">by net invest</Label>
+                        <Label
+                          htmlFor="net"
+                          className="font-medium cursor-pointer"
+                        >
+                          by net invest
+                        </Label>
                       </div>
                     </div>
                   </RadioGroup>
                 </div>
 
                 <div>
-                  <Label className="text-base font-semibold mb-2 block">{holding.code} amount</Label>
+                  <Label className="text-base font-semibold mb-2 block">
+                    {holding.code} amount
+                  </Label>
                   <Input
                     type="number"
                     value={tokenAmount || ""}
-                    onChange={(e) => setTokenAmount(Number(e.target.value) || 0)}
+                    onChange={(e) =>
+                      setTokenAmount(Number(e.target.value) || 0)
+                    }
                     placeholder="0"
                     className="h-14 text-2xl font-medium text-right"
                   />
@@ -276,7 +321,11 @@ export default function CreateOrderDialog({ open, onOpenChange, holding }) {
                 <div className="bg-primary/5 border border-primary/20 rounded-2xl p-5 flex gap-4">
                   <Info className="w-6 h-6 text-primary shrink-0 mt-1" />
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    The price of each token is <strong>{pricePerToken.toFixed(6)}</strong> {paymentMethod} and a minimum investment requirement is set at <strong>100 {holding.code}</strong>, equivalent to <strong>1,000 USD</strong>.
+                    The price of each token is{" "}
+                    <strong>{pricePerToken.toFixed(6)}</strong> {paymentMethod}{" "}
+                    and a minimum investment requirement is set at{" "}
+                    <strong>100 {holding.code}</strong>, equivalent to{" "}
+                    <strong>1,000 USD</strong>.
                   </p>
                 </div>
               </div>
@@ -285,8 +334,12 @@ export default function CreateOrderDialog({ open, onOpenChange, holding }) {
               <div className="space-y-8">
                 <div className="bg-muted/50 rounded-2xl p-6 space-y-6">
                   <div>
-                    <Label className="text-sm text-muted-foreground">You get</Label>
-                    <div className="text-3xl font-bold mt-1">{holding.code} {tokenAmount.toLocaleString()}</div>
+                    <Label className="text-sm text-muted-foreground">
+                      You get
+                    </Label>
+                    <div className="text-3xl font-bold mt-1">
+                      {holding.code} {tokenAmount.toLocaleString()}
+                    </div>
                   </div>
                   <div className="flex justify-center">
                     <div className="w-12 h-12 rounded-full bg-foreground flex items-center justify-center">
@@ -294,7 +347,9 @@ export default function CreateOrderDialog({ open, onOpenChange, holding }) {
                     </div>
                   </div>
                   <div>
-                    <Label className="text-sm text-muted-foreground">You pay</Label>
+                    <Label className="text-sm text-muted-foreground">
+                      You pay
+                    </Label>
                     <div className="flex items-center gap-3 mt-2">
                       <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white font-bold">
                         {paymentMethod[0]}
@@ -317,16 +372,28 @@ export default function CreateOrderDialog({ open, onOpenChange, holding }) {
 
                 <div className="bg-muted/30 rounded-2xl p-6 space-y-4 border">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Number of tokens</span>
-                    <span className="font-semibold">{holding.code} {tokenAmount.toLocaleString()}</span>
+                    <span className="text-muted-foreground">
+                      Number of tokens
+                    </span>
+                    <span className="font-semibold">
+                      {holding.code} {tokenAmount.toLocaleString()}
+                    </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Price per token</span>
-                    <span className="font-semibold">{paymentMethod} {pricePerToken.toFixed(6)}</span>
+                    <span className="text-muted-foreground">
+                      Price per token
+                    </span>
+                    <span className="font-semibold">
+                      {paymentMethod} {pricePerToken.toFixed(6)}
+                    </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Net investment</span>
-                    <span className="font-semibold">{paymentMethod} {totalPayable.toFixed(2)}</span>
+                    <span className="text-muted-foreground">
+                      Net investment
+                    </span>
+                    <span className="font-semibold">
+                      {paymentMethod} {totalPayable.toFixed(2)}
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Fee</span>
@@ -334,7 +401,9 @@ export default function CreateOrderDialog({ open, onOpenChange, holding }) {
                   </div>
                   <div className="pt-4 border-t flex justify-between text-lg font-bold">
                     <span>Amount to pay</span>
-                    <span>{paymentMethod} {totalPayable.toFixed(2)}</span>
+                    <span>
+                      {paymentMethod} {totalPayable.toFixed(2)}
+                    </span>
                   </div>
                 </div>
               </div>

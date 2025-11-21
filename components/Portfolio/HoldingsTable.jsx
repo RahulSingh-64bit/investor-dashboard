@@ -1,4 +1,3 @@
-// components/Portfolio/HoldingsTable.jsx
 "use client";
 
 import { useState } from "react";
@@ -45,14 +44,16 @@ export default function HoldingsTable({ holdings = [] }) {
   if (holdings.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-muted-foreground">No holdings yet. Start investing!</p>
+        <p className="text-muted-foreground">
+          No holdings yet. Start investing!
+        </p>
       </div>
     );
   }
 
   return (
     <>
-      {/* Responsive Table */}
+      {/* Table */}
       <div className="w-full overflow-x-auto rounded-lg border bg-card">
         <Table>
           <TableHeader>
@@ -92,7 +93,7 @@ export default function HoldingsTable({ holdings = [] }) {
                       variant="outline"
                       size="sm"
                       className="h-9 px-3 text-xs"
-                      onClick={() => handleOpenOrder(holding)}
+                      /* onClick={() => handleOpenOrder(holding)} */
                     >
                       Redeem
                     </Button>
@@ -100,7 +101,7 @@ export default function HoldingsTable({ holdings = [] }) {
                       variant="outline"
                       size="sm"
                       className="h-9 px-3 text-xs"
-                      onClick={() => handleOpenOrder(holding)}
+                      /* onClick={() => handleOpenOrder(holding)} */
                     >
                       Transfer
                     </Button>
@@ -120,7 +121,12 @@ export default function HoldingsTable({ holdings = [] }) {
                       variant="ghost"
                       size="icon"
                       className="h-7 w-7"
-                      onClick={() => handleCopy(`${holding.code} ${holding.balance}`, `bal-${holding.id}`)}
+                      onClick={() =>
+                        handleCopy(
+                          `${holding.code} ${holding.balance}`,
+                          `bal-${holding.id}`
+                        )
+                      }
                     >
                       {copiedId === `bal-${holding.id}` ? (
                         <Check className="h-4 w-4 text-success" />
@@ -134,14 +140,25 @@ export default function HoldingsTable({ holdings = [] }) {
                 {/* Valuation Per Token */}
                 <TableCell className="font-medium">
                   <div className="flex items-center gap-2">
-                    <span className="tabular-nums">{holding.valuationPerToken}</span>
+                    <span className="tabular-nums">
+                      {holding.valuationPerToken}
+                    </span>
                     <Button
                       variant="ghost"
                       size="icon"
                       className="h-7 w-7"
-                      onClick={() => handleCopy(holding.valuationPerToken, `vpt-${holding.id}`)}
+                      onClick={() =>
+                        handleCopy(
+                          holding.valuationPerToken,
+                          `vpt-${holding.id}`
+                        )
+                      }
                     >
-                      {copiedId === `vpt-${holding.id}` ? <Check className="h-4 w-4 text-success" /> : <Copy className="h-4 w-4" />}
+                      {copiedId === `vpt-${holding.id}` ? (
+                        <Check className="h-4 w-4 text-success" />
+                      ) : (
+                        <Copy className="h-4 w-4" />
+                      )}
                     </Button>
                   </div>
                 </TableCell>
@@ -154,9 +171,15 @@ export default function HoldingsTable({ holdings = [] }) {
                       variant="ghost"
                       size="icon"
                       className="h-7 w-7"
-                      onClick={() => handleCopy(holding.valuation, `val-${holding.id}`)}
+                      onClick={() =>
+                        handleCopy(holding.valuation, `val-${holding.id}`)
+                      }
                     >
-                      {copiedId === `val-${holding.id}` ? <Check className="h-4 w-4 text-success" /> : <Copy className="h-4 w-4" />}
+                      {copiedId === `val-${holding.id}` ? (
+                        <Check className="h-4 w-4 text-success" />
+                      ) : (
+                        <Copy className="h-4 w-4" />
+                      )}
                     </Button>
                   </div>
                 </TableCell>
@@ -176,9 +199,15 @@ export default function HoldingsTable({ holdings = [] }) {
                       variant="ghost"
                       size="icon"
                       className="h-7 w-7"
-                      onClick={() => handleCopy(holding.wallet, `wallet-${holding.id}`)}
+                      onClick={() =>
+                        handleCopy(holding.wallet, `wallet-${holding.id}`)
+                      }
                     >
-                      {copiedId === `wallet-${holding.id}` ? <Check className="h-4 w-4 text-success" /> : <Copy className="h-4 w-4" />}
+                      {copiedId === `wallet-${holding.id}` ? (
+                        <Check className="h-4 w-4 text-success" />
+                      ) : (
+                        <Copy className="h-4 w-4" />
+                      )}
                     </Button>
                   </div>
                 </TableCell>
