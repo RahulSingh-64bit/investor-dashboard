@@ -1,4 +1,3 @@
-// tailwind.config.js
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -9,7 +8,7 @@ module.exports = {
     extend: {
       colors: {
         success: {
-          DEFAULT: "#10b981",    // emerald-500
+          DEFAULT: "#10b981",    
           50: "#f0fdf4",
           100: "#dcfce7",
           200: "#bbf7d0",
